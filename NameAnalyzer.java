@@ -68,11 +68,32 @@ public class NameAnalyzer
         reader.close();
     }
     
+    /**
+     * Uses a simple search algorithm to find a NameRecord by name and print it.
+     */
+    public void printCountByName(String name)
+    {
+        for(NameRecord rec : boyRecords)
+        {
+            String recordName = rec.getName();
+            // equalsIgnoreCase is an alternative version of the equals method that is case insensitive
+            if (recordName.equalsIgnoreCase(name))
+            {
+                System.out.println(rec);
+                return;  // early return
+            }
+        }
+        System.out.println("Name is not found: " + name);
+    }
+    
     
     public static void main() throws IOException
     {
         NameAnalyzer app = new NameAnalyzer();
-        app.loadFile("babynames2010s.txt");
+        app.loadFile("babynames2000s.txt");
+        app.printCountByName("Matthew");
+        app.printCountByName("Hayes");
+        app.printCountByName("Connor");
         
     }
     
