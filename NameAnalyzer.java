@@ -72,10 +72,31 @@ public class NameAnalyzer
 
     }
     
+    /**
+     * Uses a search algorithm to find a NameRecord by name and print it.
+     */
+    public void printCountByName(String name)
+    {
+        for(NameRecord n : boyRecords)
+        {
+            String recordName = n.getName();
+            // alternate version of the equals method which ignores case mismatches
+            if (recordName.equalsIgnoreCase(name))
+            {
+                System.out.println(n);
+                return;  // early return
+            }
+        }
+        System.out.println("Name not found: " + name);
+    }
+    
     public static void main() throws IOException
     {
         NameAnalyzer app = new NameAnalyzer();
         app.loadFile("babynames2010s.txt");
+        app.printCountByName("Matthew");
+        app.printCountByName("Craig");
+        app.printCountByName("Hayes");
         
     }
     
