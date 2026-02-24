@@ -53,6 +53,7 @@ public class Cereal
 
    /* toString method returns the values stored in the instance variables   
       concatenated in a sentence. */
+   @Override
    public String toString()
    {
       return "Cereal: " + this.name + " has: " + this.calories 
