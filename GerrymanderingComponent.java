@@ -196,7 +196,7 @@ public class GerrymanderingComponent extends JComponent
 
         int textHeight = g2.getFontMetrics().getHeight();
         g2.drawString(this.selectedState, 0, textHeight);
-        g2.drawString(this.eligibleVoters + " eligible voters", HEIGHT - 175, textHeight);
+        g2.drawString(this.eligibleVoters + " eligible voters", WIDTH - 175, textHeight);
 
     }
     
